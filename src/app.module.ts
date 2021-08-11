@@ -8,6 +8,8 @@ import * as Joi from 'joi';
 import { Review } from './reviews/entities/review.entity';
 import { Employee } from './employees/entities/employee.entity';
 import { UsersModule } from './users/users.module';
+import { CommonModule } from './common/common.module';
+import { User } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -39,11 +41,12 @@ import { UsersModule } from './users/users.module';
       database: process.env.DB_NAME,
       synchronize: process.env.NODE_ENV !== 'prod',
       logging: false,
-      entities: [Review, Employee],
+      entities: [Review, Employee, User],
     }),
     EmployeesModule,
     ReviewsModule,
     UsersModule,
+    CommonModule,
   ],
   providers: [],
 })
