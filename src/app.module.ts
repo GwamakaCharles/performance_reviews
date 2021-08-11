@@ -7,6 +7,7 @@ import { ReviewsModule } from './reviews/reviews.module';
 import * as Joi from 'joi';
 import { Review } from './reviews/entities/review.entity';
 import { Employee } from './employees/entities/employee.entity';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -42,6 +43,7 @@ import { Employee } from './employees/entities/employee.entity';
     }),
     EmployeesModule,
     ReviewsModule,
+    UsersModule,
   ],
   providers: [],
 })
